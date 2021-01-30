@@ -12,5 +12,11 @@ namespace Aweton.Mxw.DocxGenerator.Test
       var dg = new DocumentGenerator.DocxGenerator($"{Guid.NewGuid()}");
       Assert.IsNotNull(dg);
     }
+    [TestMethod]
+    public void CtorDoesNotCheckTheBatchSizeGreaterThanZero()
+    {
+      var dg = new DocumentGenerator.DocxGenerator($"{Guid.NewGuid()}", -1);
+      Assert.IsNotNull(dg);
+    }
   }
 }
